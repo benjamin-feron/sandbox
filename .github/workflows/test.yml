@@ -1,13 +1,6 @@
 name: Test code
 
-on:
-  push:
-    branches:
-    - master
-    - dev
-  pull_request:
-    branches:
-    - dev
+on: [push]
 
 jobs:
   one-host-default-port-no-port-forward:
