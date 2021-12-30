@@ -16,8 +16,8 @@ jobs:
         #- 6379:6379
         #options: --entrypoint redis-server
         env:
-          - USER_NAME=test
-          - USER_PASSWORD=test
+        - USER_NAME=test
+        - USER_PASSWORD=test
 
     steps:
     - uses: actions/checkout@v1
