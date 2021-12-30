@@ -15,11 +15,14 @@ jobs:
         #ports:
         #- 6379:6379
         #options: --entrypoint redis-server
+        environment:
+          - USER_NAME=test
+          - USER_PASSWORD=test
 
     steps:
     - uses: actions/checkout@v1
 
-    - run: ssh -T host-1
+    - run: ssh -T test:test@host-1
     #  working-directory: ./redis
 
     #- run: node client.js
