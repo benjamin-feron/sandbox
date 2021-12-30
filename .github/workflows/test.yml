@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image:  alpine:latest
+      image:  ubuntu:latest
 
     services:
       host-1:
