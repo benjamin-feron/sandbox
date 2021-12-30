@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - run: ssh -T test:test@host-1:2222
+    - run: ssh -p 2222 -T test:test@host-1
     #  working-directory: ./redis
 
     #- run: node client.js
