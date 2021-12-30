@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - run: ssh host-1
+    - run: ssh -T host-1
     #  working-directory: ./redis
 
     #- run: node client.js
