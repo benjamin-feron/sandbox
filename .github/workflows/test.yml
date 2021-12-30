@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image:  ubuntu:latest
+      image:  kroniak/ssh-client:latest
 
     services:
       host-1:
