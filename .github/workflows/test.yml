@@ -15,7 +15,7 @@ jobs:
         #ports:
         #- 6379:6379
         #options: --entrypoint redis-server
-        environment:
+        env:
           - USER_NAME=test
           - USER_PASSWORD=test
 
