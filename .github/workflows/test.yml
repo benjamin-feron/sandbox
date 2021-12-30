@@ -12,8 +12,8 @@ jobs:
     services:
       host-1:
         image: linuxserver/openssh-server
-        #ports:
-        #- 6379:6379
+        ports:
+        - 22:2222
         #options: --entrypoint redis-server
         env:
           USER_NAME: test
@@ -22,8 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - run: ping host-1
-    #- run: ssh -T test:test@host-1
+    - run: ssh -T test:test@host-1
     #  working-directory: ./redis
 
     #- run: node client.js
