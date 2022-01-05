@@ -24,7 +24,7 @@ jobs:
 
     - run: ping -c 1 host-1
 
-    - run: ssh -p 2222 -T test:test@host-1
+    #- run: ssh -p 2222 -T test:test@host-1
     #  working-directory: ./redis
 
     #- run: node client.js
