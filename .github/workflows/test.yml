@@ -1,6 +1,6 @@
 name: Test code
 
-on: [push]
+on: push
 
 jobs:
   one-host-default-port-no-port-forward:
@@ -21,6 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+
+    - run: ping host-1
 
     - run: ssh -p 2222 -T test:test@host-1
     #  working-directory: ./redis
