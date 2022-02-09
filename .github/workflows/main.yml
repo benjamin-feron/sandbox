@@ -4,34 +4,9 @@ on:
   # push:
   #   branches:
   #     - 'github-action-docker-build-push'
-  # create:
-  #   tags:
-  #     - '*.*.*'
-  # workflow_call:
-  #   secrets:
-  #     DOCKERHUB_USERNAME:
-  #       required: true
-  #     DOCKERHUB_TOKEN:
-  #       required: true
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning' 
-        type: choice
-        options:
-        - info
-        - warning
-        - debug 
-      tags:
-        description: 'Test scenario tags'
-        required: false 
-        type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
+  create:
+    tags:
+      - '*.*.*'
 
 jobs:
   docker:
@@ -72,5 +47,4 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          # tags: b3f3/private:latest
-          #labels: ${{ steps.meta.outputs.labels }}
+          labels: ${{ steps.meta.outputs.labels }}
