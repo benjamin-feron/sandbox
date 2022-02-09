@@ -7,12 +7,13 @@ on:
   create:
     tags:
       - '*.*.*'
-  workflow_call:
-    secrets:
-      DOCKERHUB_USERNAME:
-        required: true
-      DOCKERHUB_TOKEN:
-        required: true
+  workflow_dispatch: ~
+  # workflow_call:
+  #   secrets:
+  #     DOCKERHUB_USERNAME:
+  #       required: true
+  #     DOCKERHUB_TOKEN:
+  #       required: true
 
 jobs:
   docker:
