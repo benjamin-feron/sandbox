@@ -3,7 +3,7 @@ name: docker
 on:
   push:
     branches:
-      - 'github-action-docker'
+      - 'github-action-local-action-with-docker'
   workflow_call:
 
 jobs:
