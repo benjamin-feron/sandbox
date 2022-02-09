@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - 'github-action-docker-build-push'
+  create:
+    tags:
+      - '*'
   # workflow_call:
     # secrets:
     #   DOCKERHUB_USERNAME:
