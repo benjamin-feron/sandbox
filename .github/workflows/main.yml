@@ -1,12 +1,10 @@
 name: Docker build & push
 
 on:
-  create:
-    # branches:
-    #   - 'github-action-docker-build-push'
-    tags:
-      - '*'
-  # workflow_call: ~
+  push:
+    branches:
+      - 'github-action-docker-build-push'
+  # workflow_call:
     # secrets:
     #   DOCKERHUB_USERNAME:
     #     required: true
