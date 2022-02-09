@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - 'github-action-docker-build-push'
+    tags:
+      - '**'
   # workflow_call: ~
     # secrets:
     #   DOCKERHUB_USERNAME:
@@ -18,17 +20,17 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v2
-      #-
-      #  name: Docker meta
-      #  id: meta
-      #  uses: docker/metadata-action@v3
-      #  with:
-      #    images: b3f3/private
-      #    tags: |
-      #      type=ref,event=tag
-      #      type=semver,pattern={{version}}
-      #      type=semver,pattern={{major}}.{{minor}}
-      #      type=semver,pattern={{major}}
+      -
+       name: Docker meta
+       id: meta
+       uses: docker/metadata-action@v3
+       with:
+         images: b3f3/private
+         tags: |
+           type=ref,event=tag
+           type=semver,pattern={{version}}
+           type=semver,pattern={{major}}.{{minor}}
+           type=semver,pattern={{major}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -49,6 +51,6 @@ jobs:
           #platforms: linux/amd64,linux/arm64,linux/arm/v7
           platforms: linux/arm64
           push: true
-          #tags: ${{ steps.meta.outputs.tags }}
-          tags: b3f3/private:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          # tags: b3f3/private:latest
           #labels: ${{ steps.meta.outputs.labels }}
