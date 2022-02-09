@@ -26,6 +26,12 @@ jobs:
            type=semver,pattern={{version}}
            type=semver,pattern={{major}}.{{minor}}
            type=semver,pattern={{major}}
+         labels: |
+           org.opencontainers.image.title=Hello-World
+           org.opencontainers.image.description=This your first repo!
+           org.opencontainers.image.url=https://github.com/benjamin-feron/sandbox
+           org.opencontainers.image.source=https://github.com/benjamin-feron/sandbox
+           org.opencontainers.image.licenses=MIT
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
